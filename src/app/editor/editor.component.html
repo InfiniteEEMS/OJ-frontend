@@ -1,0 +1,22 @@
+<div>
+  <textarea rows="10" cols="60" wrap="hard" type="text" [formControl]="code" >
+  </textarea>
+</div>
+
+<mat-form-field>
+  <mat-select placeholder="Your Language" [(ngModel)]="selectedLang"> 
+    <mat-option *ngFor="let l of languages" [value]="l">
+      {{l}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click) = "submit()"> Submit </button>
+
+<div *ngIf="output">
+<h3>Status: {{output.status}}</h3>
+<div *ngIf="output.info"> {{output.info}} </div>
+<div *ngIf="output.lastInput"> Last Input: {{output.lastInput}} </div>
+<div *ngIf="output.yourOutput"> Your Output: {{output.yourOutput}} </div>
+<div *ngIf="output.expectedOutput"> Expected Output: {{output.expectedOutput}} </div>
+</div>

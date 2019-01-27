@@ -1,0 +1,20 @@
+<div *ngIf="problem">
+
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{problem.name | uppercase}}</mat-card-title>
+    <mat-card-subtitle>{{problem.id}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    {{problem.desc}}
+  </mat-card-content>
+  <mat-card-actions>
+    <app-editor></app-editor>
+  </mat-card-actions>
+</mat-card>
+
+</div>
+
+
